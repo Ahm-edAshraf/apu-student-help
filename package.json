@@ -2,26 +2,62 @@
   "name": "apu-student-helper",
   "version": "0.1.0",
   "private": true,
+  "description": "An intelligent study companion for APU students",
+  "author": "APU Student Developer",
+  "homepage": "https://github.com/your-username/apu-student-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/apu-student-helper.git"
+  },
+  "keywords": ["student", "education", "apu", "study", "ai", "nextjs"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "preview": "npm run build && npm run start",
+    "clean": "rm -rf .next",
+    "postinstall": "npm run type-check"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.2.22",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.50.5",
+    "ai": "^4.3.18",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.525.0",
+    "mammoth": "^1.9.1",
+    "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "recharts": "^3.1.0",
+    "tailwind-merge": "^3.3.1",
+    "tesseract.js": "^5.1.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
   }
 }
