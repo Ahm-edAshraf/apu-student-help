@@ -154,6 +154,42 @@ vercel logs
 3. **Update Environment Variables**:
    - Update `NEXT_PUBLIC_APP_URL` to your custom domain
 
+## ✅ Post-Deployment Success
+
+### Your App is Live!
+🎉 **Live URL**: https://apu-helper.vercel.app
+
+### Critical Next Steps:
+
+1. **Fix Supabase Auth** (Required for login to work):
+   - Go to [Supabase Dashboard](https://supabase.com/dashboard) → Your Project → Authentication → URL Configuration
+   - **Site URL**: `https://apu-helper.vercel.app`
+   - **Redirect URLs** (add all of these):
+     ```
+     https://apu-helper.vercel.app/auth/callback
+     https://apu-helper.vercel.app/login
+     https://apu-helper.vercel.app/dashboard
+     ```
+
+2. **Update Vercel Environment Variable**:
+   ```bash
+   vercel env add NEXT_PUBLIC_APP_URL
+   # Value: https://apu-helper.vercel.app
+   vercel --prod
+   ```
+
+3. **Test Everything**:
+   - [ ] Visit the live app
+   - [ ] Try registering with an APU email
+   - [ ] Test file uploads
+   - [ ] Check AI chat functionality
+
+### CSP Errors Fixed
+The Content Security Policy has been updated to work with Next.js. Redeploy once more to apply the fix:
+```bash
+git add . && git commit -m "Fix CSP for production" && git push
+```
+
 ## Monitoring and Maintenance
 
 1. **Set up Alerts**: Configure Vercel alerts for downtime
