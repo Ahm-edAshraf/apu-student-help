@@ -69,22 +69,7 @@ export const SECURITY_CONFIG = {
 // Security headers for responses
 export function getSecurityHeaders(): Record<string, string> {
   return {
-    // Content Security Policy - More permissive for Next.js
-    'Content-Security-Policy': [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://api.google.com https://*.vercel.app",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: https: blob:",
-      "connect-src 'self' https://*.supabase.co https://api.google.com wss://*.supabase.co https://*.vercel.app",
-      "worker-src 'self' blob: https://unpkg.com",
-      "object-src 'none'",
-      "frame-ancestors 'none'",
-      "base-uri 'self'",
-      "form-action 'self'"
-    ].join('; '),
-    
-    // Security headers
+    // Security headers (CSP removed for Next.js compatibility)
     'X-Frame-Options': 'DENY',
     'X-Content-Type-Options': 'nosniff',
     'X-XSS-Protection': '1; mode=block',
